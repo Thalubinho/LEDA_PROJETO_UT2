@@ -1,4 +1,4 @@
-package structures;
+package structures.linked_list;
 
 public class Node<T extends Comparable<T>> {
     protected T data;

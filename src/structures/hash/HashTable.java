@@ -1,6 +1,7 @@
-package structures;
+package structures.hash;
 
 import interfaces.HasKey;
+import structures.linked_list.LinkedList;
 
 public class HashTable <T extends HasKey & Comparable<T>>   {
     private LinkedList<T>[] table;
