@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CSVReader {
 	private final String path;
-	private CSVRecord[] csvRecords; // csvRecord[0] is the first line, header is ignored
+	private final CSVRecord[] csvRecords; // csvRecord[0] is the first line, header is ignored
 
 	public CSVReader(String name) {
 		this.path = name;
@@ -33,11 +33,7 @@ public class CSVReader {
 		return this.csvRecords;
 	}
 
-	public void setCsvRecords(CSVRecord[] csvRecords) {
-		this.csvRecords = csvRecords;
-	}
-
-	public CSVRecord[] read() {
+	private CSVRecord[] read() {
 		CSVRecord[] csvRecords = new CSVRecord[0];
 
 		File file = new File(this.getPath());
@@ -48,7 +44,9 @@ public class CSVReader {
 
 		try (Reader reader = Files.newBufferedReader(Paths.get(this.getPath()));
 			 CSVParser csvParser = CSVFormat.DEFAULT
-					 .withHeader() // Define a primeira linha como cabeçalho
+					 .builder()
+					 .setHeader()// Define a primeira linha como cabeçalho
+					 .build()
 					 .parse(reader)) {
 
 			List<CSVRecord> recordsList = csvParser.getRecords();
@@ -67,6 +65,6 @@ public class CSVReader {
 	}
 
 	public static void main(String[] args) {
-		CSVReader gamesCSV = new CSVReader("games.csv");
+		//CSVReader gamesCSV = new CSVReader("games.csv");
 	}
 }
