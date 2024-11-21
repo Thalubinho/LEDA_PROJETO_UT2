@@ -19,7 +19,7 @@ public class RecordsCSV{
     public static final int ACHIEVEMENTS = 25;
     public static final int PRICE = 6;
     public static final int LINUX = 18;
-    public static final int LANGUAGES = 9;
+    public static final int LANGUAGES = 10;
 
 
     public CSVRecord[] getRecords() {
