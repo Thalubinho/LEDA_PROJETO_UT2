@@ -58,6 +58,8 @@ public class Transformations {
 			e.printStackTrace(System.err);
 			System.err.println("Erro ao criar 'games_formated_release_date.csv'");
 		}
+
+		System.out.println("Transformations Release Date: OK");
 	}
 
 	public static void transformationLinux() {
@@ -92,6 +94,8 @@ public class Transformations {
 			e.printStackTrace(System.out);
 			System.err.println("Erro criar 'games_linux.csv'");
 		}
+
+		System.out.println("Transformations Linux: OK");
 	}
 
 	public static void transformationPortuguese(){
@@ -128,6 +132,8 @@ public class Transformations {
 			e.printStackTrace(System.err);
 			System.err.println("Erro criar 'games_formated_release_date.csv'");
 		}
+
+		System.out.println("Transformations Portuguese: OK");
 	}
 
 	// Create class Date and extract these methods
