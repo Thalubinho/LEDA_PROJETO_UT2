@@ -1,5 +1,7 @@
 package app;
 
+import execution_sorts.SortsByReleaseDate;
+
 import java.io.IOException;
 import java.nio.file.*;
 
@@ -23,14 +25,14 @@ public class Main {
 		Transformations.transformationLinux();
 		Transformations.transformationPortuguese();
 
-		// Sorts
-		SortsByReleaseDate.mergeSortByReleaseDateAverageCase("games_formated_release_date.csv");
-		SortsByReleaseDate.mergeSortByReleaseDateBestCase("games_release_date_mergeSort_medioCaso.csv");
-		SortsByReleaseDate.mergeSortByReleaseDateWorstCase("games_formated_release_date.csv");
+		// Sorts by Release Date
+		SortsByReleaseDate.sortsReleaseDate();
 
-		SortsByReleaseDate.heapSortByReleaseDateAverageCase("games_formated_release_date.csv");
-		SortsByReleaseDate.heapSortByReleaseDateBestCase("games_release_date_heapSort_medioCaso.csv");
-		SortsByReleaseDate.heapSortByReleaseDateWorstCase("games_formated_release_date.csv");
+		// Sorts by Prices
+
+
+		// Sorts by Achievements
+
 
 	}
 }

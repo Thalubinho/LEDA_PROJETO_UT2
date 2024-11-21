@@ -1,13 +1,13 @@
-package app;
+package execution_sorts;
 
 import algorithms.*;
 import csv_io.RecordsCSV;
 
 public class SortsByReleaseDate {
 
-    public static void mergeSortByReleaseDateAverageCase(String filenameCSV) {
+    private static void mergeSortByReleaseDateAverageCase() {
         // Initializing variable
-        RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV);
+        RecordsCSV recordsCSV = new RecordsCSV("transformations", "games_formated_release_date.csv");
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -34,9 +34,9 @@ public class SortsByReleaseDate {
         recordsCSV.copyCSV("sorts","games_release_date_mergeSort_medioCaso.csv");
     }
 
-	public static void mergeSortByReleaseDateBestCase(String filenameCSV) {
+	private static void mergeSortByReleaseDateBestCase() {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_mergeSort_medioCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_mergeSort_medioCaso.csv"); //games_release_date_mergeSort_medioCaso
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -63,9 +63,9 @@ public class SortsByReleaseDate {
         recordsCSV.copyCSV("sorts","games_release_date_mergeSort_melhorCaso.csv");
     }
 
-	public static void mergeSortByReleaseDateWorstCase(String filenameCSV) {
+	private static void mergeSortByReleaseDateWorstCase() {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_mergeSort_melhorCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_mergeSort_melhorCaso.csv"); //games_release_date_mergeSort_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -95,9 +95,9 @@ public class SortsByReleaseDate {
     }
 
 
-    public static void heapSortByReleaseDateAverageCase(String filenameCSV) {
+    private static void heapSortByReleaseDateAverageCase() {
         // Initializing variable
-        RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date.csv
+        RecordsCSV recordsCSV = new RecordsCSV("transformations", "games_formated_release_date.csv"); //games_release_date.csv
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -124,9 +124,9 @@ public class SortsByReleaseDate {
         recordsCSV.copyCSV("sorts","games_release_date_heapSort_medioCaso.csv");
     }
 
-	public static void heapSortByReleaseDateBestCase(String filenameCSV) {
+	private static void heapSortByReleaseDateBestCase() {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_heapSort_medioCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_heapSort_medioCaso.csv"); //games_release_date_heapSort_medioCaso
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -153,9 +153,9 @@ public class SortsByReleaseDate {
         recordsCSV.copyCSV("sorts","games_release_date_heapSort_melhorCaso.csv");
     }
 
-	public static void heapSortByReleaseDateWorstCase(String filenameCSV) {
+	private static void heapSortByReleaseDateWorstCase() {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_heapSort_melhorCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_heapSort_melhorCaso.csv"); //games_release_date_heapSort_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -185,9 +185,9 @@ public class SortsByReleaseDate {
     }
 
 
-	public static void quickSortHoareByReleaseDateAverageCase(String filenameCSV) {
+	private static void quickSortHoareByReleaseDateAverageCase() {
         // Initializing variable
-        RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date.csv
+        RecordsCSV recordsCSV = new RecordsCSV("transformations", "games_formated_release_date.csv"); //games_release_date.csv
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -214,9 +214,9 @@ public class SortsByReleaseDate {
         recordsCSV.copyCSV("sorts","games_release_date_quickSortHoare_medioCaso.csv");
     }
 
-	public static void quickSortHoareByReleaseDateBestCase(String filenameCSV) {
+	private static void quickSortHoareByReleaseDateBestCase() {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortHoare_medioCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_quickSortHoare_medioCaso.csv"); //games_release_date_quickSortHoare_medioCaso
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -243,9 +243,9 @@ public class SortsByReleaseDate {
         recordsCSV.copyCSV("sorts","games_release_date_quickSortHoare_melhorCaso.csv");
     }
 
-	public static void quickSortHoareByReleaseDateWorstCase(String filenameCSV) {
+	private static void quickSortHoareByReleaseDateWorstCase() {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortHoare_melhorCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_quickSortHoare_melhorCaso.csv"); //games_release_date_quickSortHoare_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -275,9 +275,9 @@ public class SortsByReleaseDate {
     }
 
 
-	public static void insertionSortByReleaseDateAverageCase(String filenameCSV) {
+	private static void insertionSortByReleaseDateAverageCase() {
 			// Initializing variable
-			RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date.csv
+			RecordsCSV recordsCSV = new RecordsCSV("transformations", "games_formated_release_date.csv"); //games_release_date.csv
 
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
@@ -301,12 +301,12 @@ public class SortsByReleaseDate {
 
 			System.out.printf(" %.2f; %.2f;  ", durationTime, consumedMemory);
 
-			recordsCSV.copyCSV("sorts","games_release_date_insertioSort_medioCaso.csv");
+			recordsCSV.copyCSV("sorts","games_release_date_insertionSort_medioCaso.csv");
 		}
 
-	public static void insertionSortByReleaseDateBestCase(String filenameCSV) {
+	private static void insertionSortByReleaseDateBestCase() {
 			// Initializing variables
-			RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_insertioSort_medioCaso
+			RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_insertionSort_medioCaso.csv"); //games_release_date_insertioSort_medioCaso
 
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
@@ -330,12 +330,12 @@ public class SortsByReleaseDate {
 
 			System.out.printf(" %.2f; %.2f;  ", durationTime, consumedMemory);
 
-			recordsCSV.copyCSV("sorts","games_release_date_insertioSort_melhorCaso.csv");
+			recordsCSV.copyCSV("sorts","games_release_date_insertionSort_melhorCaso.csv");
 		}
 
-	public static void insertionSortByReleaseDateWorstCase(String filenameCSV) {
+	private static void insertionSortByReleaseDateWorstCase() {
 			// Initializing variables
-			RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_insertioSort_melhorCaso
+			RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_insertionSort_melhorCaso.csv"); //games_release_date_insertioSort_melhorCaso
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
 			Runtime runtime = Runtime.getRuntime();
@@ -361,13 +361,13 @@ public class SortsByReleaseDate {
 
 			System.out.printf(" %2f; %.2f;  ", durationTime, consumedMemory);
 
-			recordsCSV.copyCSV("sorts","games_release_date_insertioSort_piorCaso.csv");
+			recordsCSV.copyCSV("sorts","games_release_date_insertionSort_piorCaso.csv");
 		}
 
 
-	public static void selectionSortByReleaseDateAverageCase(String filenameCSV) {
+	private static void selectionSortByReleaseDateAverageCase() {
 			// Initializing variable
-			RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date.csv
+			RecordsCSV recordsCSV = new RecordsCSV("transformations", "games_formated_release_data.csv"); //games_release_date.csv
 
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
@@ -394,9 +394,9 @@ public class SortsByReleaseDate {
 			recordsCSV.copyCSV("sorts","games_release_date_selectionSort_medioCaso.csv");
 		}
 
-	public static void selectionSortByReleaseDateBestCase(String filenameCSV) {
+	private static void selectionSortByReleaseDateBestCase() {
 			// Initializing variables
-			RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_selectionSort_medioCaso
+			RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_selectionSort_medioCaso.csv"); //games_release_date_selectionSort_medioCaso
 
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
@@ -423,9 +423,9 @@ public class SortsByReleaseDate {
 			recordsCSV.copyCSV("sorts","games_release_date_selectionSort_melhorCaso.csv");
 		}
 
-	public static void selectionSortByReleaseDateWorstCase(String filenameCSV) {
+	private static void selectionSortByReleaseDateWorstCase() {
 			// Initializing variables
-			RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_selectionSort_melhorCaso
+			RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_selectionSort_melhorCaso.csv"); //games_release_date_selectionSort_melhorCaso
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
 			Runtime runtime = Runtime.getRuntime();
@@ -455,9 +455,9 @@ public class SortsByReleaseDate {
 		}
 
 
-	public static void quickSortMediana3ByReleaseDateAverageCase(String filenameCSV) {
+	private static void quickSortMediana3ByReleaseDateAverageCase() {
 		// Initializing variable
-		RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date.csv
+		RecordsCSV recordsCSV = new RecordsCSV("transformations", "games_formated_release_date.csv"); //games_release_date.csv
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -484,9 +484,9 @@ public class SortsByReleaseDate {
 		recordsCSV.copyCSV("sorts","games_release_date_quickSortMediana3_medioCaso.csv");
 	}
 
-	public static void quickSortMediana3ByReleaseDateBestCase(String filenameCSV) {
+	private static void quickSortMediana3ByReleaseDateBestCase() {
 		// Initializing variables
-		RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortMediana3_medioCaso
+		RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_quickSortMediana3_medioCaso.csv"); //games_release_date_quickSortMediana3_medioCaso
 
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
@@ -513,9 +513,9 @@ public class SortsByReleaseDate {
 		recordsCSV.copyCSV("sorts","games_release_date_quickSortMediana3_melhorCaso.csv");
 	}
 
-	public static void quickSortMediana3ByReleaseDateWorstCase(String filenameCSV) {
+	private static void quickSortMediana3ByReleaseDateWorstCase() {
 		// Initializing variables
-		RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortMediana3_melhorCaso
+		RecordsCSV recordsCSV = new RecordsCSV("sorts", "games_release_date_quickSortMediana3_melhorCaso.csv"); //games_release_date_quickSortMediana3_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -545,26 +545,36 @@ public class SortsByReleaseDate {
 	}
 
 
-	public static void main(String[] args) {
+	public static void sortsReleaseDate() {
 		System.out.print("Merge Sort; Release Date;");
-        mergeSortByReleaseDateAverageCase("games_formated_release_data.csv");
-        mergeSortByReleaseDateBestCase("games_release_date_mergeSort_medioCaso.csv");
-		mergeSortByReleaseDateWorstCase("games_formated_release_data.csv");
+		mergeSortByReleaseDateAverageCase();
+		mergeSortByReleaseDateBestCase();
+		mergeSortByReleaseDateWorstCase();
 
 		System.out.print("Heap Sort; Release Date;");
-		heapSortByReleaseDateAverageCase("games_formated_release_data.csv");
-		heapSortByReleaseDateBestCase("games_release_date_heapSort_medioCaso.csv");
-		heapSortByReleaseDateWorstCase("games_formated_release_data.csv");
+		heapSortByReleaseDateAverageCase();
+		heapSortByReleaseDateBestCase();
+		heapSortByReleaseDateWorstCase();
 
-		System.out.print("Insetion Sort; Release Date;");
-		insertionSortByReleaseDateAverageCase("games_formated_release_data.csv");
-		insertionSortByReleaseDateBestCase("games_release_date_insertionSort_medioCaso.csv");
-		insertionSortByReleaseDateWorstCase("games_formated_release_data.csv");
+		System.out.print("Quick Sort Hoare; Release Date;");
+		quickSortHoareByReleaseDateAverageCase();
+		quickSortHoareByReleaseDateBestCase();
+		quickSortHoareByReleaseDateWorstCase();
+
+		System.out.print("Quick Sort Mediana 3; Release Date;");
+		SortsByReleaseDate.quickSortMediana3ByReleaseDateAverageCase();
+		SortsByReleaseDate.quickSortMediana3ByReleaseDateBestCase();
+		SortsByReleaseDate.quickSortMediana3ByReleaseDateWorstCase();
+
+		System.out.print("Insertion Sort; Release Date;");
+		insertionSortByReleaseDateAverageCase();
+		insertionSortByReleaseDateBestCase();
+		insertionSortByReleaseDateWorstCase();
 
 		System.out.print("Selection Sort; Release Date;");
-		insertionSortByReleaseDateAverageCase("games_formated_release_data.csv");
-		insertionSortByReleaseDateBestCase("games_release_date_selectionSort_medioCaso.csv");
-		insertionSortByReleaseDateWorstCase("games_formated_release_data.csv");
+		selectionSortByReleaseDateAverageCase();
+		selectionSortByReleaseDateBestCase();
+		selectionSortByReleaseDateWorstCase();
 
     }
 

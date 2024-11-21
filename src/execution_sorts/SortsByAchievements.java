@@ -1,4 +1,4 @@
-package app;
+package execution_sorts;
 
 public class SortsByAchievements {
 }
