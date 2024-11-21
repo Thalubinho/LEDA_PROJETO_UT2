@@ -30,7 +30,7 @@ public class Transformations {
                     					.build())) {
 
 			for(CSVRecord record: gamesCSV.getCsvRecords()) { // Each record is one line
-				String date = record.get(ACHIEVEMENTS);   // Each column is a .get(index)
+				String date = record.get(RELEASE_DATE);   // Each column is a .get(index)
 
  				// Formating "Release Date"
  				date = date.replace(' ', '/').replace(",","");
@@ -43,7 +43,7 @@ public class Transformations {
  				String[] row = new String[numColumns];
 
  				for(int column = 0; column < numColumns; column++) {
- 					if(column == ACHIEVEMENTS) { // "Release Date" column
+ 					if(column == RELEASE_DATE) { // "Release Date" column
  						row[column] = date;
  					} else {
  						row[column] = record.get(column);
