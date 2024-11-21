@@ -3,11 +3,9 @@ package algorithms;
 import csv_io.RecordsCSV;
 import org.apache.commons.csv.CSVRecord;
 
-import java.util.Scanner;
-
 public class HeapSort {
 
-    // Método que implementa o Heapsort
+    // Utilizar uma estrutura Heap mais robusta para o HeapSort
     public static void heapSort(CSVRecord[] array) {
         int tamanho = array.length; // nos da o tamanho do array passado no argumento da funcao
         int i = tamanho / 2, pai, filho; // Inicializa variáveis

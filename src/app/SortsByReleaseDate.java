@@ -2,11 +2,8 @@ package app;
 
 import algorithms.*;
 import csv_io.RecordsCSV;
-import org.apache.commons.csv.CSVRecord;
 
-import java.util.Arrays;
-
-public class Sorts {
+public class SortsByReleaseDate {
 
     public static void mergeSortByReleaseDateAverageCase(String filenameCSV) {
         // Initializing variable
@@ -68,7 +65,7 @@ public class Sorts {
 
 	public static void mergeSortByReleaseDateWorstCase(String filenameCSV) {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date_mergeSort_melhorCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_mergeSort_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -158,7 +155,7 @@ public class Sorts {
 
 	public static void heapSortByReleaseDateWorstCase(String filenameCSV) {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date_heapSort_melhorCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_heapSort_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -248,7 +245,7 @@ public class Sorts {
 
 	public static void quickSortHoareByReleaseDateWorstCase(String filenameCSV) {
         // Initializing variables
-        RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date_quickSortHoare_melhorCaso
+        RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortHoare_melhorCaso
 		double initialMemory, finalMemory, initialTime, finalTime;
 		double consumedMemory, durationTime;
 		Runtime runtime = Runtime.getRuntime();
@@ -293,7 +290,7 @@ public class Sorts {
 			initialTime = System.nanoTime();
 			initialMemory = runtime.totalMemory() - runtime.freeMemory();
 
-			InsertionSort.insertionSort(recordsCSV.getRecords());
+			InsertionSort.insertionSortDate(recordsCSV.getRecords());
 
 			finalMemory = runtime.totalMemory() - runtime.freeMemory();
 			finalTime = System.nanoTime();
@@ -322,7 +319,7 @@ public class Sorts {
 			initialTime = System.nanoTime();
 			initialMemory = runtime.totalMemory() - runtime.freeMemory();
 
-			InsertionSort.insertionSort(recordsCSV.getRecords());
+			InsertionSort.insertionSortDate(recordsCSV.getRecords());
 
 			finalMemory = runtime.totalMemory() - runtime.freeMemory();
 			finalTime = System.nanoTime();
@@ -338,7 +335,7 @@ public class Sorts {
 
 	public static void insertionSortByReleaseDateWorstCase(String filenameCSV) {
 			// Initializing variables
-			RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date_insertioSort_melhorCaso
+			RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_insertioSort_melhorCaso
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
 			Runtime runtime = Runtime.getRuntime();
@@ -353,7 +350,7 @@ public class Sorts {
 			initialTime = System.nanoTime();
 			initialMemory = runtime.totalMemory() - runtime.freeMemory();
 
-			InsertionSort.insertionSort(recordsCSV.getRecords());
+			InsertionSort.insertionSortDate(recordsCSV.getRecords());
 
 			finalMemory = runtime.totalMemory() - runtime.freeMemory();
 			finalTime = System.nanoTime();
@@ -383,7 +380,7 @@ public class Sorts {
 			initialTime = System.nanoTime();
 			initialMemory = runtime.totalMemory() - runtime.freeMemory();
 
-			SelectionSort.selectionSort(recordsCSV.getRecords());
+			SelectionSort.selectionSortReleaseDate(recordsCSV.getRecords());
 
 			finalMemory = runtime.totalMemory() - runtime.freeMemory();
 			finalTime = System.nanoTime();
@@ -412,7 +409,7 @@ public class Sorts {
 			initialTime = System.nanoTime();
 			initialMemory = runtime.totalMemory() - runtime.freeMemory();
 
-			SelectionSort.selectionSort(recordsCSV.getRecords());
+			SelectionSort.selectionSortReleaseDate(recordsCSV.getRecords());
 
 			finalMemory = runtime.totalMemory() - runtime.freeMemory();
 			finalTime = System.nanoTime();
@@ -428,7 +425,7 @@ public class Sorts {
 
 	public static void selectionSortByReleaseDateWorstCase(String filenameCSV) {
 			// Initializing variables
-			RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date_selectionSort_melhorCaso
+			RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_selectionSort_melhorCaso
 			double initialMemory, finalMemory, initialTime, finalTime;
 			double consumedMemory, durationTime;
 			Runtime runtime = Runtime.getRuntime();
@@ -443,7 +440,7 @@ public class Sorts {
 			initialTime = System.nanoTime();
 			initialMemory = runtime.totalMemory() - runtime.freeMemory();
 
-			SelectionSort.selectionSort(recordsCSV.getRecords());
+			SelectionSort.selectionSortReleaseDate(recordsCSV.getRecords());
 
 			finalMemory = runtime.totalMemory() - runtime.freeMemory();
 			finalTime = System.nanoTime();
@@ -457,7 +454,98 @@ public class Sorts {
 			recordsCSV.copyCSV("sorts","games_release_date_selectionSort_piorCaso.csv");
 		}
 
-    public static void main(String[] args) {
+
+	public static void quickSortMediana3ByReleaseDateAverageCase(String filenameCSV) {
+		// Initializing variable
+		RecordsCSV recordsCSV = new RecordsCSV("transformations", filenameCSV); //games_release_date.csv
+
+		double initialMemory, finalMemory, initialTime, finalTime;
+		double consumedMemory, durationTime;
+		Runtime runtime = Runtime.getRuntime();
+
+		// Cleaning Garbage Collector
+		System.gc();
+
+		// Measuring execution time and consumed memory
+		initialTime = System.nanoTime();
+		initialMemory = runtime.totalMemory() - runtime.freeMemory();
+
+		QuickSortComMediana3.quickSortMediana3(recordsCSV.getRecords(),0,recordsCSV.getRecords().length-1);
+
+		finalMemory = runtime.totalMemory() - runtime.freeMemory();
+		finalTime = System.nanoTime();
+
+		//Final
+		durationTime = (finalTime - initialTime) / 1_000_000;
+		consumedMemory = ((finalMemory - initialMemory) / (1_024 * 1_024));
+
+		System.out.printf(" %.2f; %.2f;  ", durationTime, consumedMemory);
+
+		recordsCSV.copyCSV("sorts","games_release_date_quickSortMediana3_medioCaso.csv");
+	}
+
+	public static void quickSortMediana3ByReleaseDateBestCase(String filenameCSV) {
+		// Initializing variables
+		RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortMediana3_medioCaso
+
+		double initialMemory, finalMemory, initialTime, finalTime;
+		double consumedMemory, durationTime;
+		Runtime runtime = Runtime.getRuntime();
+
+		// Cleaning Garbage Collector
+		System.gc();
+
+		// Measuring execution time and consumed memory
+		initialTime = System.nanoTime();
+		initialMemory = runtime.totalMemory() - runtime.freeMemory();
+
+		QuickSortComMediana3.quickSortMediana3(recordsCSV.getRecords(),0,recordsCSV.getRecords().length-1);
+
+		finalMemory = runtime.totalMemory() - runtime.freeMemory();
+		finalTime = System.nanoTime();
+
+		//Final
+		durationTime = (finalTime - initialTime) / 1_000_000;
+		consumedMemory = ((finalMemory - initialMemory) / (1_024 * 1_024));
+
+		System.out.printf(" %.2f; %.2f;  ", durationTime, consumedMemory);
+
+		recordsCSV.copyCSV("sorts","games_release_date_quickSortMediana3_melhorCaso.csv");
+	}
+
+	public static void quickSortMediana3ByReleaseDateWorstCase(String filenameCSV) {
+		// Initializing variables
+		RecordsCSV recordsCSV = new RecordsCSV("sorts", filenameCSV); //games_release_date_quickSortMediana3_melhorCaso
+		double initialMemory, finalMemory, initialTime, finalTime;
+		double consumedMemory, durationTime;
+		Runtime runtime = Runtime.getRuntime();
+
+		// Descending sort
+		MergeSortRecordArrayDescending.sort(recordsCSV.getRecords(),0,recordsCSV.getRecords().length-1);
+
+		// Cleaning Garbage Collector
+		System.gc();
+
+		// Measuring execution time and consumed memory
+		initialTime = System.nanoTime();
+		initialMemory = runtime.totalMemory() - runtime.freeMemory();
+
+		QuickSortComMediana3.quickSortMediana3(recordsCSV.getRecords(),0,recordsCSV.getRecords().length-1);
+
+		finalMemory = runtime.totalMemory() - runtime.freeMemory();
+		finalTime = System.nanoTime();
+
+		//Final
+		durationTime = (finalTime - initialTime) / 1_000_000;
+		consumedMemory = ((finalMemory - initialMemory) / (1_024 * 1_024));
+
+		System.out.printf(" %.2f; %.2f;  ", durationTime, consumedMemory);
+
+		recordsCSV.copyCSV("sorts","games_release_date_quickSortMediana3_piorCaso.csv");
+	}
+
+
+	public static void main(String[] args) {
 		System.out.print("Merge Sort; Release Date;");
         mergeSortByReleaseDateAverageCase("games_formated_release_data.csv");
         mergeSortByReleaseDateBestCase("games_release_date_mergeSort_medioCaso.csv");

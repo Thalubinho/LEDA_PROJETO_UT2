@@ -6,19 +6,21 @@ import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class RecordsCSV{
     private CSVRecord[] records;
+    public static final int RELEASE_DATE = 2;
+    public static final int ACHIEVEMENTS = 25;
+    public static final int PRICE = 6;
+    public static final int LINUX = 18;
+    public static final int LANGUAGES = 9;
+
 
     public CSVRecord[] getRecords() {
         return records;

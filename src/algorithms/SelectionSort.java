@@ -1,10 +1,11 @@
 package algorithms;
 
-import csv_io.RecordsCSV;
+import static csv_io.RecordsCSV.*;
 import org.apache.commons.csv.CSVRecord;
 
 public class SelectionSort {
-	public static void selectionSort(CSVRecord[] array) {
+
+	public static void selectionSortReleaseDate(CSVRecord[] array) {
 		int minorIndex;
 		CSVRecord minor;
 
@@ -12,7 +13,7 @@ public class SelectionSort {
 			minor = array[unsortedIndex];
 			minorIndex = unsortedIndex;
 			for(int index = unsortedIndex; index < array.length; index++) {
-				if (!RecordsCSV.compareReleaseDate(minor.get(2),array[index].get(2))) {
+				if (!compareReleaseDate(minor.get(RELEASE_DATE),array[index].get(RELEASE_DATE))) {
 					minor = array[index];
 					minorIndex = index;
 				}				
@@ -21,4 +22,41 @@ public class SelectionSort {
 			array[unsortedIndex] = minor;		
 		}
 	}
+
+	public static void selectionSortPrice(CSVRecord[] array) {
+		int minorIndex;
+		CSVRecord minor;
+
+		for(int unsortedIndex = 0; unsortedIndex < array.length - 1; unsortedIndex++) {
+			minor = array[unsortedIndex];
+			minorIndex = unsortedIndex;
+			for(int index = unsortedIndex; index < array.length; index++) {
+				if ( !(Float.parseFloat(minor.get(PRICE)) > Float.parseFloat(array[index].get(PRICE))) ) {
+					minor = array[index];
+					minorIndex = index;
+				}
+			}
+			array[minorIndex] = array[unsortedIndex];
+			array[unsortedIndex] = minor;
+		}
+	}
+
+	public static void selectionSortAchievements(CSVRecord[] array) {
+		int minorIndex;
+		CSVRecord minor;
+
+		for(int unsortedIndex = 0; unsortedIndex < array.length - 1; unsortedIndex++) {
+			minor = array[unsortedIndex];
+			minorIndex = unsortedIndex;
+			for(int index = unsortedIndex; index < array.length; index++) {
+				if ( !(Integer.parseInt(minor.get(ACHIEVEMENTS)) > Integer.parseInt(array[index].get(ACHIEVEMENTS))) ) {
+					minor = array[index];
+					minorIndex = index;
+				}
+			}
+			array[minorIndex] = array[unsortedIndex];
+			array[unsortedIndex] = minor;
+		}
+	}
+
 }

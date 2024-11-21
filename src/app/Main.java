@@ -1,12 +1,11 @@
 package app;
 
-import csv_io.CSVReader;
-
 import java.io.IOException;
 import java.nio.file.*;
 
 public class Main {
 	public static void main(String[] args) {
+
 		// Creating folders "transformations" and "sorts"
 		Path path_transformations = Paths.get("transformations");
 		Path path_ordinations = Paths.get("sorts");
@@ -25,13 +24,13 @@ public class Main {
 		Transformations.transformationPortuguese();
 
 		// Sorts
-		Sorts.mergeSortByReleaseDateAverageCase("games_formated_release_date.csv");
-		Sorts.mergeSortByReleaseDateBestCase("games_release_date_mergeSort_medioCaso.csv");
-		Sorts.mergeSortByReleaseDateWorstCase("games_formated_release_date.csv");
+		SortsByReleaseDate.mergeSortByReleaseDateAverageCase("games_formated_release_date.csv");
+		SortsByReleaseDate.mergeSortByReleaseDateBestCase("games_release_date_mergeSort_medioCaso.csv");
+		SortsByReleaseDate.mergeSortByReleaseDateWorstCase("games_formated_release_date.csv");
 
-		Sorts.heapSortByReleaseDateAverageCase("games_formated_release_date.csv");
-		Sorts.heapSortByReleaseDateBestCase("games_release_date_heapSort_medioCaso.csv");
-		Sorts.heapSortByReleaseDateWorstCase("games_formated_release_date.csv");
+		SortsByReleaseDate.heapSortByReleaseDateAverageCase("games_formated_release_date.csv");
+		SortsByReleaseDate.heapSortByReleaseDateBestCase("games_release_date_heapSort_medioCaso.csv");
+		SortsByReleaseDate.heapSortByReleaseDateWorstCase("games_formated_release_date.csv");
 
 	}
 }

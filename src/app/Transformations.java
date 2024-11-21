@@ -8,13 +8,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import csv_io.HeaderGamesCSV;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
+import csv_io.HeaderGamesCSV;
 import csv_io.CSVReader;
 import csv_io.CSVWriter;
+import static csv_io.RecordsCSV.*;
 
 public class Transformations {
 
@@ -29,7 +30,7 @@ public class Transformations {
                     					.build())) {
 
 			for(CSVRecord record: gamesCSV.getCsvRecords()) { // Each record is one line
-				String date = record.get(2);   // Each column is a .get(index)
+				String date = record.get(ACHIEVEMENTS);   // Each column is a .get(index)
 
  				// Formating "Release Date"
  				date = date.replace(' ', '/').replace(",","");
@@ -42,7 +43,7 @@ public class Transformations {
  				String[] row = new String[numColumns];
 
  				for(int column = 0; column < numColumns; column++) {
- 					if(column == 2) { // "Release Date" column
+ 					if(column == ACHIEVEMENTS) { // "Release Date" column
  						row[column] = date;
  					} else {
  						row[column] = record.get(column);
@@ -69,7 +70,7 @@ public class Transformations {
 					 .build())) {
 
 			for (CSVRecord record : gamesFormatedCSV.getCsvRecords()) { // Each record is one line
-				String linux = record.get(18);
+				String linux = record.get(LINUX);
 
 				//Cloning "games_formated_release_data.csv" and removing the ones that don´t support linux
 				if (Objects.equals(linux, "True")) {
@@ -104,27 +105,21 @@ public class Transformations {
 					.build())) {
 
 			for(CSVRecord record: gamesFormatedCSV.getCsvRecords()) { // Each record is one line
-				String languagesSupported = record.get(10);  // Each column is a .get(index)
+				String languagesSupported = record.get(LANGUAGES);  // Each column is a .get(index)
 
 				// Formating by games that support portuguese
-				if(languagesSupported.contains("Portuguese")){
-
-					//Cloning "games.csv" and changing "Release Date"
+				if (languagesSupported.contains("Portuguese")) {
 					int numColumns = record.size();
 					String[] row = new String[numColumns];
 
-					for(int column = 0; column < numColumns; column++) {
-						if(column == 2) { // "Release Date" column
-							row[column] = languagesSupported;
-						} else {
-							row[column] = record.get(column);
-						}
+					for (int column = 0; column < numColumns; column++) {
+						row[column] = record.get(column);
 					}
 
-					// Creating "portuguese_supported_games.csv"
+					// Creating "games_portuguese.csv"
 					csvPrinter.printRecord((Object[]) row);
 					//System.out.println(Arrays.toString(row));
-					//System.out.println(languagesSupported);
+					//System.out.println(linux);
 				}
 
 
